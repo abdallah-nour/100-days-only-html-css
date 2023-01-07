@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./main.js"></script>
+  <title>Traffic Light Using Toggle Switches</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="content">
+
+      <label class="toggle" id="toggle" style="--c-indicator: red;">
+        <input class="toggle--input active" type="checkbox" name="toggle--input" id="toggle--input">
+
+        <div class="track">
+          <span class="circle"></span>
+        </div>
+      </label>
+
+      <label class="toggle" id="toggle" style="--c-indicator: yellow;">
+        <input class="toggle--input" type="checkbox" name="toggle--input" id="toggle--input">
+
+        <div class="track">
+          <span class="circle"></span>
+        </div>
+      </label>
+
+      <label class="toggle" id="toggle" style="--c-indicator: hsl(104, 100%, 50%);">
+        <input class="toggle--input" type="checkbox" name="toggle--input" id="toggle--input">
+
+        <div class="track">
+          <span class="circle"></span>
+        </div>
+      </label>
+
+    </div>
+  </div>
+</body>
+
+</html>
