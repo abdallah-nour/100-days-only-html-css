@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --c-body: hsl(233, 12%, 14%);
+  --c-primary: hsl(233, 12%, 20%);
+  --c-primary-light: hsl(233, 12%, 26%);
+  --c-primary-lighter: hsl(233, 12%, 32%);
+  --transition-duration: 250ms;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--c-body);
+}
+
+.wrapper .content {
+  padding: 3em 6em;
+  background-color: var(--c-primary-light);
+  border-radius: 1rem;
+}
+
+.toggle {
+  display: flex;
+  min-height: 1em;
+  min-width: 2em;
+  padding: 1em;
+  border-radius: 0.5em;
+  background-color: var(--c-primary);
+  border: 0;
+}
+
+.toggle:focus-visible {
+  outline: 2px solid hsl(0, 0%, 75%);
+}
+
+.toggle input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.toggle .track {
+  --size: 2em;
+
+  position: relative;
+  height: calc(var(--size));
+  width: calc(var(--size) * 3);
+
+  background-color: var(--c-primary-lighter);
+  border-radius: 100vmax;
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.toggle.active .track {
+  background-color: var(--c-primary-light);
+}
+
+.toggle .circle {
+  position: absolute;
+  height: 100%;
+  width: var(--size);
+  transform: scale(1.1);
+  background-color: var(--c-indicator);
+  border-radius: 100vmax;
+  transition: margin var(--transition-duration);
+  left: 0;
+}
+
+.toggle.active .circle {
+  margin-inline-start: calc(var(--size) * 2);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
