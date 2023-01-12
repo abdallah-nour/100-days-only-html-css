@@ -1,4 +1,5 @@
 # 100 Days only HTML & CSS
 
 - [x] 1.traffic-light
-- [ ] 2.toggle-switch
+- [x] 2.toggle-switch
+- [ ] 3.dialog
