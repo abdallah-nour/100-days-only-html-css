@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-body: linear-gradient(to right, #d946ef, #9333ea);
+  --duration: 200ms;
+  --z-dialog-close: -10;
+  --z-dialog-open: 10;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: var(--bg-body);
+  padding-bottom: 5rem;
+}
+
+.btn--dialog {
+  border: 0;
+  border-radius: 4px;
+  padding: 1em 2em;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+
+  color: white;
+  background-color: hsl(0, 0%, 0%, 0.2);
+
+  cursor: pointer;
+  transition-property: background-color, outline;
+  transition-duration: var(--duration);
+}
+
+.btn--dialog:is(:hover, :focus) {
+  background-color: hsl(0, 0%, 0%, 0.3);
+  outline: 0.3em solid hsl(0, 0%, 100%, 0.2);
+}
+
+.btn--dialog:active {
+  outline-width: 0.1em;
+}
+
+.dialog {
+  position: absolute;
+  z-index: var(--z-dialog-close);
+  padding: 2em 3em;
+
+  min-width: min(calc(100% - 2rem), 30rem);
+
+  top: 30vmin;
+  left: 50vw;
+  transform: translateX(-50%);
+
+  background-color: rebeccapurple;
+  opacity: 0;
+  border-radius: 0.5em;
+
+  cursor: auto;
+  text-align: left;
+}
+
+.btn--dialog:focus-within .dialog {
+  opacity: 1;
+  z-index: var(--z-dialog-open);
+  transition: opacity var(--duration);
+}
+
+.dialog h3 {
+  font-size: 2rem;
+}
+
+.dialog p {
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 35rem) {
+  html {
+    font-size: 14px;
+  }
+}
