@@ -1,7 +1,16 @@
-::view-transition-old(root),
+/* ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 1.3s;
+  animation-duration: .3s;
+} */
+
+.cat-img {
+  view-transition-name: meow-image;
 }
+
+/* ::view-transition-old(meow-image),
+::view-transition-new(meow-image) {
+  animation-duration: .5s;
+} */
 
 .cat-details {
   display: flex;
